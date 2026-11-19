@@ -11,6 +11,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { EquiposModule } from './equipos/equipos.module';
 import { TorneosModule } from './torneos/torneos.module';
 import { InscripcionesModule } from './inscripciones/inscripciones.module';
+import { PartidosModule } from './partidos/partidos.module';
+import { ResultadosModule } from './resultados/resultados.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { InscripcionesModule } from './inscripciones/inscripciones.module';
     EquiposModule,
     TorneosModule,
     InscripcionesModule,
+    PartidosModule,
+    ResultadosModule,
   ],
   providers: [
     // Guards globales: primero autenticación, luego roles.
