@@ -1,0 +1,138 @@
+:root {
+  --bg: #0f1220;
+  --panel: #171b2e;
+  --panel-2: #1f2440;
+  --borde: #2c3358;
+  --texto: #e7e9f5;
+  --suave: #9aa1c4;
+  --primario: #7c5cff;
+  --primario-2: #5b3df5;
+  --acento: #22d3ee;
+  --ok: #22c55e;
+  --error: #ef4444;
+  --aviso: #f59e0b;
+  --radio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--acento); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.3rem; }
+
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.encabezado h1 { margin: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.5rem 0.95rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primario);
+  color: white;
+  text-decoration: none;
+}
+.btn:hover { background: var(--primario-2); text-decoration: none; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn-sec { background: transparent; border-color: var(--borde); color: var(--texto); }
+.btn-sec:hover { background: var(--panel-2); }
+.btn-peligro { background: var(--error); }
+.btn-peligro:hover { background: #c53030; }
+.btn-ok { background: var(--ok); }
+.btn-chico { padding: 0.25rem 0.6rem; font-size: 0.85rem; }
+
+label { display: block; font-size: 0.9rem; color: var(--suave); margin-bottom: 0.25rem; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  background: var(--panel-2);
+  color: var(--texto);
+  font: inherit;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--primario); border-color: transparent; }
+input.invalido, select.invalido { border-color: var(--error); }
+
+.campo { margin-bottom: 0.9rem; }
+.error-campo { color: var(--error); font-size: 0.82rem; margin-top: 0.2rem; }
+
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 1rem; }
+
+.filtros { display: grid; grid-template-columns: 2fr repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; align-items: end; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.55rem 0.6rem; text-align: left; border-bottom: 1px solid var(--borde); }
+th { color: var(--suave); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+.tabla-scroll { overflow-x: auto; }
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--panel-2);
+  border: 1px solid var(--borde);
+  color: var(--suave);
+  white-space: nowrap;
+}
+.badge-ABIERTO, .badge-ACEPTADA, .badge-ACTIVO { color: var(--ok); border-color: var(--ok); }
+.badge-EN_CURSO, .badge-PROGRAMADO, .badge-PENDIENTE { color: var(--aviso); border-color: var(--aviso); }
+.badge-CANCELADO, .badge-RECHAZADA, .badge-INACTIVO { color: var(--error); border-color: var(--error); }
+.badge-FINALIZADO { color: var(--acento); border-color: var(--acento); }
+.badge-ADMIN { color: var(--primario); border-color: var(--primario); }
+
+.texto-suave { color: var(--suave); }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tabs { display: flex; gap: 0.25rem; border-bottom: 1px solid var(--borde); margin-bottom: 1rem; flex-wrap: wrap; }
+.tabs button {
+  background: none; border: none; color: var(--suave); padding: 0.6rem 1rem; cursor: pointer; font: inherit;
+  border-bottom: 2px solid transparent;
+}
+.tabs button.activo { color: var(--texto); border-bottom-color: var(--primario); }
+
+@media (max-width: 640px) {
+  .filtros { grid-template-columns: 1fr; }
+  h1 { font-size: 1.4rem; }
+}
