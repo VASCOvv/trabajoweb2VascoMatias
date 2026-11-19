@@ -5,6 +5,8 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import PerfilView from '../views/PerfilView.vue'
+import EquiposView from '../views/EquiposView.vue'
+import EquipoDetalleView from '../views/EquipoDetalleView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const routes = [
@@ -12,6 +14,10 @@ const routes = [
   { path: '/login', name: 'login', component: LoginView, meta: { soloInvitados: true } },
   { path: '/registro', name: 'registro', component: RegisterView, meta: { soloInvitados: true } },
   { path: '/perfil', name: 'perfil', component: PerfilView, meta: { requiereAuth: true } },
+
+  { path: '/equipos', name: 'equipos', component: EquiposView },
+  // Ruta dinámica: :id se recibe como prop en la vista
+  { path: '/equipos/:id', name: 'equipo-detalle', component: EquipoDetalleView, props: true },
 
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ]
