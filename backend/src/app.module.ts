@@ -8,6 +8,7 @@ import { AuthGuard } from './common/guards/auth.guard';
 import { RolesGuard } from './common/guards/roles.guard';
 import { AuthModule } from './auth/auth.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { EquiposModule } from './equipos/equipos.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     }),
     AuthModule,
     UsuariosModule,
+    EquiposModule,
   ],
   providers: [
     // Guards globales: primero autenticación, luego roles.
