@@ -7,6 +7,9 @@ import RegisterView from '../views/RegisterView.vue'
 import PerfilView from '../views/PerfilView.vue'
 import EquiposView from '../views/EquiposView.vue'
 import EquipoDetalleView from '../views/EquipoDetalleView.vue'
+import TorneosView from '../views/TorneosView.vue'
+import TorneoDetalleView from '../views/TorneoDetalleView.vue'
+import TorneoFormView from '../views/TorneoFormView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const routes = [
@@ -18,6 +21,15 @@ const routes = [
   { path: '/equipos', name: 'equipos', component: EquiposView },
   // Ruta dinámica: :id se recibe como prop en la vista
   { path: '/equipos/:id', name: 'equipo-detalle', component: EquipoDetalleView, props: true },
+
+  // Rutas de torneos
+{ path: '/torneos', name: 'torneos', component: TorneosView },
+
+{ path: '/torneos/nuevo', name: 'torneo-nuevo', component: TorneoFormView, meta: { requiereAuth: true, rol: 'ADMIN' } },
+
+{ path: '/torneos/:id/editar', name: 'torneo-editar', component: TorneoFormView, props: true, meta: { requiereAuth: true, rol: 'ADMIN' } },
+
+{ path: '/torneos/:id', name: 'torneo-detalle', component: TorneoDetalleView, props: true },
 
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ]
