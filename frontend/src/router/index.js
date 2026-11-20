@@ -10,6 +10,8 @@ import EquipoDetalleView from '../views/EquipoDetalleView.vue'
 import TorneosView from '../views/TorneosView.vue'
 import TorneoDetalleView from '../views/TorneoDetalleView.vue'
 import TorneoFormView from '../views/TorneoFormView.vue'
+import PartidosView from '../views/PartidosView.vue'
+import PartidoDetalleView from '../views/PartidoDetalleView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
 const routes = [
@@ -30,6 +32,11 @@ const routes = [
 { path: '/torneos/:id/editar', name: 'torneo-editar', component: TorneoFormView, props: true, meta: { requiereAuth: true, rol: 'ADMIN' } },
 
 { path: '/torneos/:id', name: 'torneo-detalle', component: TorneoDetalleView, props: true },
+
+  // Rutas de partidos
+  { path: '/partidos', name: 'partidos', component: PartidosView },
+
+  { path: '/partidos/:id', name: 'partido-detalle', component: PartidoDetalleView, props: true },
 
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
 ]
