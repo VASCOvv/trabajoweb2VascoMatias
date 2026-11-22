@@ -261,7 +261,8 @@ Resultado: **3 suites, 17 pruebas, todas aprobadas.**
 ### Manuales
 
 - [`docs/PRUEBAS_MANUALES.md`](docs/PRUEBAS_MANUALES.md): 30 casos de prueba funcionales (login, roles, validaciones, filtros,
-  ID inexistente, reglas de negocio, persistencia y error de conexión). El resultado de cada caso se registra en la columna **Obtenido**.
+  ID inexistente, reglas de negocio, persistencia y error de conexión). Resultado: **30 de 30 casos aprobados** (ejecutados el 22/11/2026
+  sobre una copia limpia del repositorio).
 - [`backend/database/consultas_verificacion.sql`](backend/database/consultas_verificacion.sql): consultas SQL para comprobar los datos.
 
 ## 14. Metodología Kanban y trabajo en GitHub
